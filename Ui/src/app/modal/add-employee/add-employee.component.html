@@ -1,0 +1,113 @@
+
+<mat-dialog-content class="mat-typography" >
+
+
+  <mat-toolbar >
+    <!-- <mat-label *ngIf="itemList.id" >Update Item</mat-label> -->
+    <mat-label  (click)="dismiss()">Add Employee</mat-label>
+  </mat-toolbar>
+  <mat-label>Department should be Selected *</mat-label>
+
+    <form novalidate class="modal-form" #form="ngForm" (submit)="onSubmit(form)">
+      <input type="text" hidden  name="employeeId"
+      [value]="formData.employeeId">
+
+      <mat-form-field  class="modal-full-width" >
+        <mat-label>Select Department</mat-label>
+        <mat-select  #departmentId="ngModel" name="departmentId"  [(ngModel)]="formData.departmentId" required   >
+          <mat-option *ngFor="let dpt of deptList" [value]="dpt.departmentId">{{dpt.departmentName}}</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label> First Name</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. Dilabar"
+             name="firstName"
+             #firstName="ngModel"
+             [(ngModel)]="formData.firstName" required maxlength="20" minlength="3" [class.invalid]="firstName.invalid && firstName.touched"  >
+
+    </mat-form-field>
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label> Last Name</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. Hussain"
+             name="lastName"
+             #lastName="ngModel"
+             [(ngModel)]="formData.lastName" required maxlength="20" minlength="3" [class.invalid]="lastName.invalid && lastName.touched"  >
+
+    </mat-form-field>
+
+
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label>Phone</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. 9999999999"
+             name="employeePhone"
+             #employeePhone="ngModel"
+             [(ngModel)]="formData.employeePhone" required maxlength="13" minlength="10" [class.invalid]="employeePhone.invalid && employeePhone.touched"  >
+
+    </mat-form-field>
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label>Gender</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. M/F/O"
+             name="employeeGender"
+             #employeeGender="ngModel"
+             [(ngModel)]="formData.employeeGender" required  [class.invalid]="employeeGender.invalid && employeeGender.touched"  >
+
+    </mat-form-field>
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label>City</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. Siliguri"
+             name="city"
+             #city="ngModel"
+             [(ngModel)]="formData.city" required maxlength="20" minlength="3" [class.invalid]="city.invalid && city.touched"  >
+
+    </mat-form-field>
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label>Pin Code</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. 560014"
+             name="pinCode"
+             #pinCode="ngModel"
+             [(ngModel)]="formData.pinCode" required maxlength="7"  [class.invalid]="pinCode.invalid && pinCode.touched"  >
+
+    </mat-form-field>
+    <mat-form-field class="modal-full-width" >
+      <mat-label>Address</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. Full Address"
+             name="employeeAddress"
+             #employeeAddress="ngModel"
+             [(ngModel)]="formData.employeeAddress" required maxlength="25" minlength="3" [class.invalid]="employeeAddress.invalid && employeeAddress.touched"  >
+
+    </mat-form-field>
+
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label>Designation</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. Professor"
+             name="employeeDesignation"
+             #employeeDesignation="ngModel"
+             [(ngModel)]="formData.employeeDesignation" required maxlength="20" minlength="3" [class.invalid]="employeeDesignation.invalid && employeeDesignation.touched"  >
+
+    </mat-form-field>
+
+    <div mat-dialog-actions>
+    <button mat-raised-button type="submit" [disabled]="form.invalid" > Save</button>
+
+    </div>
+  </form>
+
+
+</mat-dialog-content >
+

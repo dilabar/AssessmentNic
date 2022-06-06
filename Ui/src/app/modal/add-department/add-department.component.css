@@ -1,0 +1,21 @@
+.modal-spacer {
+  flex: 1 1 auto;
+}
+.modal-form {
+  min-width: 150px;
+  max-width: 100%;
+  width: 100%;
+}
+
+.modal-full-width {
+  width: 100%;
+}
+mat-toolbar{
+  background: transparent;
+}
+.d-flex{
+  display: flex;
+}
+.p-2{
+  padding: 8px;
+}

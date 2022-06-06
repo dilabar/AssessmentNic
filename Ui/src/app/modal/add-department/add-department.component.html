@@ -1,0 +1,36 @@
+
+<mat-dialog-content class="mat-typography" >
+
+
+  <mat-toolbar >
+    <!-- <mat-label *ngIf="itemList.id" >Update Item</mat-label> -->
+    <mat-label  (click)="dismiss()">Add Department</mat-label>
+  </mat-toolbar>
+  <mat-label>Department should be unique *</mat-label>
+
+    <form novalidate class="modal-form" #form="ngForm" (submit)="onSubmit(form)">
+      <input type="text" hidden  name="departmentId"
+      [value]="formData.departmentId">
+
+    <mat-form-field class="modal-full-width" >
+      <mat-label> Department Name</mat-label>
+      <input type="text" matInput maxlength="30"
+             placeholder="Ex. B-tec,MCA"
+             name="departmentName"
+             #departmentName="ngModel"
+             [(ngModel)]="formData.departmentName" required maxlength="20" minlength="3" [class.invalid]="departmentName.invalid && departmentName.touched"  >
+      <mat-hint>Max 30!</mat-hint>
+
+    </mat-form-field>
+
+
+
+    <div mat-dialog-actions>
+    <button mat-raised-button type="submit" [disabled]="form.invalid" > Save</button>
+
+    </div>
+  </form>
+
+
+</mat-dialog-content >
+

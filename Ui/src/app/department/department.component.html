@@ -1,0 +1,57 @@
+<div class="heading">
+  <ol class="breadcrumb">
+    <li><a routerLink="/">Dashboard</a></li>
+    <li><a>/ Department</a></li>
+  </ol>
+</div>
+
+<div class="grid-container">
+  <div class="my-footer" style="margin-top: 5px;">
+    <div class="fab">
+      <button mat-fab color="primary" (click)="addDeprt()">Add</button>
+    </div>
+  </div>
+
+    <div>
+    <table mat-table [dataSource]="dataSource" class="mat-elevation-z1" style="padding: 0;margin:0;">
+      <!-- item name Column -->
+      <ng-container matColumnDef="departmentId">
+        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <td mat-cell *matCellDef="let element"> {{element.departmentId}} </td>
+      </ng-container>
+     <!-- item name Column -->
+     <ng-container matColumnDef="departmentName">
+      <th mat-header-cell *matHeaderCellDef> Name </th>
+      <td mat-cell *matCellDef="let element"> {{element.departmentName}} </td>
+    </ng-container>
+      <!-- date Column -->
+      <ng-container matColumnDef="modifiedDate">
+        <th mat-header-cell *matHeaderCellDef> Modified at </th>
+        <td mat-cell *matCellDef="let element"> {{element.modifiedDate |date:'medium'}} </td>
+      </ng-container>
+      <!-- is_maintain_stock Column --> -->
+       <ng-container matColumnDef="Action">
+        <th mat-header-cell *matHeaderCellDef>Action </th>
+        <td mat-cell *matCellDef="let element" >  <mat-icon color="accent" (click)="editDept(element.departmentId)">edit</mat-icon> <mat-icon color="warn" (click)="deleteData(element.departmentId)">restore_from_trash</mat-icon> </td>
+      </ng-container>
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;" [ngClass]="{'trending':row.departmentName}"  ></tr>
+      <!-- Row shown when there is no matching data. -->
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="4">No Data Found </td>
+      </tr>
+
+    </table>
+    <!-- <mat-paginator class="my-paginator"
+    [length]="dataSource.count"
+    [pageSize]="limit"
+    [pageSizeOptions]="[1,2,3,4, 10]"
+    (page)="pageEvent = $event; onPaginateChange($event)"
+    showFirstLastButtons
+    aria-label="Select page of periodic elements">
+  </mat-paginator> -->
+  </div>
+
+
+</div>
+

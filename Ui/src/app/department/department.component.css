@@ -1,0 +1,29 @@
+table {
+  width: 100%;
+}
+.mat-tab-group {
+  margin-bottom: 48px;
+}
+.grid-container {
+  margin: 20px;
+}
+.mat-row:hover {
+  background-color: rgb(235, 238, 237);
+  }
+
+.breadcrumb {
+  /* padding: 8px 15px; */
+  margin-bottom: 20px;
+  list-style: none;
+  background-color: #f5f5f5;
+  border-radius: 4px;
+}
+.breadcrumb{
+  font-size: 1em;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 3px #909090;
+
+}
+.breadcrumb>li {
+  display: inline-block;
+}
