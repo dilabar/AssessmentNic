@@ -1,8 +1,9 @@
 # AssessmentNic
 Backend:
-  Dotnet core wepapi
-  Dot net Entity Framework
-  language C#
+
+  Dotnet core wepapi,
+  Dot net Entity Framework,
+  language C#,
   Sqlserver
 	
 	
